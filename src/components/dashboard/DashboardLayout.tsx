@@ -41,13 +41,21 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
   // Load from localStorage on mount
   useEffect(() => {
-    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (stored) {
+    const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    console.log('Data found in localStorage:', storedData);
+    if (storedData) {
       try {
-        setAllMachines(JSON.parse(stored));
-      } catch {
+        const parsedData = JSON.parse(storedData);
+        console.log('Parsed data from localStorage:', parsedData);
+        setAllMachines(parsedData);
+      } catch (error) {
+        console.error('Error parsing data from localStorage:', error);
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
         setAllMachines([]);
       }
+    } else {
+      console.log('No data found in localStorage.');
+      setAllMachines([]);
     }
   }, []);
 
@@ -118,8 +126,10 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           gpu: get('GPU', 'gpu', 'Placa de Vídeo', 'Adaptador Gráfico')
         }
       })
+      const dataToSave = JSON.stringify(mapped);
+      console.log('Data to be saved to localStorage:', dataToSave);
       setAllMachines(mapped)
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(mapped))
+      localStorage.setItem(LOCAL_STORAGE_KEY, dataToSave)
       setImportDone(true)
       setTimeout(() => setImportDone(false), 2000)
     } catch (err: any) {

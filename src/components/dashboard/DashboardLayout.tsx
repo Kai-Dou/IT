@@ -39,24 +39,58 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   const [importDone, setImportDone] = useState(false)
   const [importError, setImportError] = useState<string | null>(null)
 
-  // Load from localStorage on mount
+  const parseCsvData = (csvString: string): Equipment[] => {
+    const lines = csvString.split('\n').filter(line => line.trim() !== '');
+    if (lines.length === 0) return [];
+    const headers = lines[0].split(',').map(h => h.trim());
+    const data = lines.slice(1).map(line => {
+      const values = line.split(',').map(v => v.trim());
+      let item: { [key: string]: any } = {};
+      headers.forEach((header, index) => {
+        item[header] = values[index] || '';
+      });
+      return item as Equipment;
+    });
+    return data;
+  };
+
   useEffect(() => {
-    const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-    console.log('Data found in localStorage:', storedData);
-    if (storedData) {
+    const loadInitialData = async () => {
+      const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+      console.log('Dados encontrados no localStorage ao iniciar:', storedData ? 'Sim' : 'Não');
+      if (storedData) {
+        try {
+          const parsedData = JSON.parse(storedData) as Equipment[];
+          setAllMachines(parsedData);
+          console.log('Dados carregados do localStorage.');
+        } catch (error) {
+          console.error('Erro ao parsear dados do localStorage, tentando carregar default CSV:', error);
+          await loadDefaultCsv();
+        }
+      } else {
+        console.log('LocalStorage vazio, carregando dados do CSV padrão...');
+        await loadDefaultCsv();
+      }
+    };
+
+    const loadDefaultCsv = async () => {
       try {
-        const parsedData = JSON.parse(storedData);
-        console.log('Parsed data from localStorage:', parsedData);
-        setAllMachines(parsedData);
+        const response = await fetch('/data/Dados.csv');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const csvText = await response.text();
+        const defaultData = parseCsvData(csvText);
+        setAllMachines(defaultData);
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(defaultData));
+        console.log('Dados do CSV padrão carregados e salvos no localStorage.');
       } catch (error) {
-        console.error('Error parsing data from localStorage:', error);
-        localStorage.removeItem(LOCAL_STORAGE_KEY);
+        console.error('Erro ao carregar o CSV padrão:', error);
         setAllMachines([]);
       }
-    } else {
-      console.log('No data found in localStorage.');
-      setAllMachines([]);
-    }
+    };
+
+    loadInitialData();
   }, []);
 
   // Filter equipment based on search and filters

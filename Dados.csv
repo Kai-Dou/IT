@@ -1,0 +1,21 @@
+Identificação,Tipo,Uso,Setor,Usuário,Locação,Marca,Modelo,Processador,NameProcessador,Code,TDP (W),Socket,Campo13,Core,Thread,DDR,GB,Slot,Utilizado,AModelo,Tipo do A,Espaço,Leitura,SO,Version,GPU,SIZE
+3,Desktop,Servidor,-,-,Não,-,,Intel,,,,,,,,,,,,,,,,,,,
+4,Desktop,Firewall,-,-,Não,-,,Intel,,,,,,,,,,,,,,,,,,,
+5,Notebook,Corporativo,Comercial Público,Kayky,Não,Dell,Inspiron 15 3520,Intel,Intel Core i3-1215U,Alder Lake,15.0,1744 FCBGA,6,2P+4E,8,DDR4,16,2,2,NVMe,KINGSTON SFRS,1T,7200MB,Windows 10 Enterprise LTSC Evaluation,21H2,Intel UHD Graphics,128Mbts
+6,Notebook,Corporativo,Comercial Público,Mikael,Sim,Lenovo,82UM,Intel,Intel Core i5-1235U,Alder Lake,15,1744 FCBGA,6,2P+8E,12,DDR4,8,1,1,NVMe,SSSTC CL4-4D,256GB,3560MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+7,Notebook,Corporativo,Diretoria,Guilherme,Não,Dell,Vostro 15 3510,Intel,Intel Core i5-1135G7,Tiger Laker-U,28,1449 FCBGA,6,4,8,DDR4,8,2,2,NVMe,IM2P33F3A,256GB,,Windows 11 Home Sigle Language,24H2,Intel Iris Xe Graphics,128Mbts
+8,Notebook,Corporativo,Diretoria,Welinton,Não,,,,,,,,,,,,,,,,,,,,,,
+9,Notebook,Corporativo,RH,Bruno,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i5-1135G7,Tiger Laker-U,28,1449 FCBGA,6,4,8,DDR4,8,2,1,NVMe,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,24H2,Intel Iris Xe Graphics,128Mbts
+10,Notebook,Corporativo,RH,Willian,Não,Lenovo,82MF,AMD,Ryzen 5 5500U,Lucienne,1.137,FP6,8,6,12,DDR4,12,2,2,NVMe,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,23H2,Amd Radeon Graphics,1GB
+11,Notebook,Corporativo,Financeiro,Alvaro,Sim,Lenovo,82UM,Intel,Intel Core i5-1235U,Alder Lake,15,1744 FCBGA,6,2P+8E,12,DDR4,8,1,1,NVMe,SAMSUNG MZAL8,256GB,3560MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+12,Notebook,Corporativo,RH,Marcelo,Sim,Lenovo,82UM,Intel,Intel Core i5-1235U,Alder Lake,15,1744 FCBGA,6,2P+8E,12,DDR4,8,1,1,NVMe,SAMSUNG MZAL8,256GB,3560MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+13,Notebook,Corporativo,Operação Público,Jones,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i3 1115G4,Tiger Laker-U,28,1449 FCBGA,6,2,4,DDR4,8,2,2,SSD,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+14,Notebook,Corporativo,Operação Público,Any,,,,,,,,,,,,,,,,,,,,,,,
+15,Notebook,Corporativo,Operação Público,Thais,,,,,,,,,,,,,,,,,,,,,,,
+16,Notebook,Corporativo,Operação Público,Taina,,,,,,,,,,,,,,,,,,,,,,,
+17,Notebook,Corporativo,Faturamento,Vinicius,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i5 1135G7,Tiger Laker-U,28,1449 FCBGA,6,4,8,DDR4,8,2,1,SSD,SM 530 SDPBNPZ,256GB,1356MB,Windows 11 Home Sigle Language,24H2,Intel Iris Xe Graphics,128Mbts
+18,Notebook,Corporativo,Suprimentos,Marcos,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i3 1115G4,Tiger Laker-U,28,1449 FCBGA,6,2,4,DDR4,8,2,2,SSD,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+19,Notebook,Corporativo,Faturamento,Matheus,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i3 1115G4,Tiger Laker-U,28,1449 FCBGA,6,2,4,DDR4,8,2,2,SSD,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+20,Notebook,Corporativo,Comercial Privado,Carol,Sim,Samsung,SM Book NP550XDA-KV 3BR,Intel,Intel Core i3 1115G4,Tiger Laker-U,28,1449 FCBGA,6,2,4,DDR4,8,2,2,SSD,SAMSUNG MZVLQ,256GB,1356MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+21,Notebook,Corporativo,Operação Privado,Maique,Sim,Dell,Latitude 3400,Intel,Intel Core i5 8265U,Whiskey Lake,15,1356 FCBGA,6,4,8,DDR4,8,2,1,NVMe,IM2P33F3A ADATA,256GB,1675MB,Windows 11 Pro,24H2,Intel UHD Graphics,128Mbts
+22,Notebook,Corporativo,Operação Privado,Fernanda,Sim,Dell,Latitude 3490,Intel,Intel Core i5 8250U,Kaby Laker -R,15,1356 FCGBA,6,4,4,DDR4,8,2,1,NVMe,IM2P33F3A ADATA,256GB,1675MB,Windows 10 Pro,22H2,Intel UHD Graphics,128Mbts

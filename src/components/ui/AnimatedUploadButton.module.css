@@ -1,0 +1,79 @@
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.3s;
+  position: relative;
+  padding: 0;
+}
+.button span {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  z-index: 2;
+}
+.button > div {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s, transform 0.3s;
+}
+.button.loading svg {
+  animation: arrow-bounce 0.7s infinite alternate;
+}
+@keyframes arrow-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+.button.done {
+  background: #1abc9c;
+}
+.button input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
